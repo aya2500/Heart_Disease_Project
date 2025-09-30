@@ -48,6 +48,7 @@ Copy code
 ---
 
 ## ⚙️ Requirements
+Install all dependencies using:
 ```bash
 pip install -r requirements.txt
 Main libraries used:
@@ -64,7 +65,7 @@ joblib
 
 🚀 How to Run the Project
 1️⃣ Jupyter Notebooks
-Open each notebook in notebooks/ to see:
+Open each notebook in notebooks/ to perform:
 
 Data preprocessing & cleaning
 
@@ -118,7 +119,7 @@ heart_disease.csv – original dataset
 heart_disease_selected_features.csv – dataset with selected key features
 
 📈 Results
-Evaluation metrics for all models are stored in results/evaluation_metrics.txt.
+Evaluation metrics for all models are stored in results/evaluation_metrics.txt
 Includes Accuracy, Precision, Recall, F1-score, ROC-AUC.
 
 📝 Notes
