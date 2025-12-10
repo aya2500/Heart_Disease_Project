@@ -1,132 +1,212 @@
 # ❤️ Heart Disease ML Project
 
 ## 📝 Project Overview
-This project analyzes and predicts heart disease risk using the UCI Heart Disease dataset.  
+
+This project aims to **analyze** and **predict heart disease risk** using the **UCI Heart Disease dataset**.
+
 It includes:
 
-- 🧹 **Data preprocessing & cleaning**
-- 📊 **Feature selection & dimensionality reduction (PCA)**
-- 🤖 **Supervised learning** (Logistic Regression, Decision Tree, Random Forest, SVM)
-- 🧩 **Unsupervised learning** (K-Means, Hierarchical Clustering)
-- ⚙️ **Model optimization** (Hyperparameter tuning)
-- 🌐 **Streamlit web UI** for real-time predictions
-- 🚀 **[Bonus] Deployment via Ngrok**
+* 🧹 **Data preprocessing & cleaning**
+* 📊 **Feature selection & dimensionality reduction (PCA)**
+* 🤖 **Supervised learning**
+  (Logistic Regression, Decision Tree, Random Forest, SVM)
+* 🧩 **Unsupervised learning**
+  (K-Means, Hierarchical Clustering)
+* ⚙️ **Model optimization** (hyperparameter tuning)
+* 🌐 **Streamlit web UI** for real-time predictions
+* 🚀 **[Bonus] Deployment via Ngrok**
 
 ---
 
 ## 📁 Folder Structure
+
+```text
 Heart_Disease_Project/
 │── data/
-│ ├── heart_disease.csv
-│ └── heart_disease_selected_features.csv
+│   ├── heart_disease.csv
+│   └── heart_disease_selected_features.csv
+│
 │── notebooks/
-│ ├── 01_data_preprocessing.ipynb
-│ ├── 02_pca_analysis.ipynb
-│ ├── 03_feature_selection.ipynb
-│ ├── 04_supervised_learning.ipynb
-│ ├── 05_unsupervised_learning.ipynb
-│ ├── 06_hyperparameter_tuning.ipynb
+│   ├── 01_data_preprocessing.ipynb
+│   ├── 02_pca_analysis.ipynb
+│   ├── 03_feature_selection.ipynb
+│   ├── 04_supervised_learning.ipynb
+│   ├── 05_unsupervised_learning.ipynb
+│   ├── 06_hyperparameter_tuning.ipynb
+│
 │── models/
-│ ├── Random_Forest_model.pkl
-│ ├── Logistic_Regression_model.pkl
-│ ├── Decision_Tree_model.pkl
-│ ├── SVM_model.pkl
-│ ├── scaler.pkl
+│   ├── Random_Forest_model.pkl
+│   ├── Logistic_Regression_model.pkl
+│   ├── Decision_Tree_model.pkl
+│   ├── SVM_model.pkl
+│   ├── scaler.pkl
+│
 │── UI/
-│ └── app.py
+│   └── app.py
+│
 │── Deploy/
-│ └── ngrok_deploy.py
+│   └── ngrok_deploy.py
+│
 │── results/
-│ └── evaluation_metrics.txt
+│   └── evaluation_metrics.txt
+│
 │── README.md
 │── requirements.txt
 │── .gitignore
-
-yaml
-Copy code
+```
 
 ---
 
 ## ⚙️ Requirements
+
 Install all dependencies using:
+
 ```bash
 pip install -r requirements.txt
-Main libraries used:
+```
 
-pandas, numpy, matplotlib, seaborn
+**Main libraries used:**
 
-scikit-learn
+* `pandas`, `numpy`
+* `matplotlib`, `seaborn`
+* `scikit-learn`
+* `streamlit`
+* `pyngrok`
+* `joblib`
 
-streamlit
+---
 
-pyngrok
+## 🚀 How to Run the Project
 
-joblib
+### 1️⃣ Run the Jupyter Notebooks
 
-🚀 How to Run the Project
-1️⃣ Jupyter Notebooks
-Open each notebook in notebooks/ to perform:
+Open each notebook in the `notebooks/` folder to:
 
-Data preprocessing & cleaning
+* Perform data preprocessing & cleaning
+* Apply PCA and dimensionality reduction
+* Perform feature selection
+* Train supervised & unsupervised models
+* Run hyperparameter tuning
 
-PCA and dimensionality reduction
+You can use:
 
-Feature selection
+```bash
+jupyter notebook
+```
 
-Training supervised & unsupervised models
+and then open the notebooks from the browser.
 
-Hyperparameter tuning
+---
 
-2️⃣ Streamlit UI
-Open terminal in UI/ folder:
+### 2️⃣ Run the Streamlit UI
 
-bash
-Copy code
+From the project root, navigate to the UI folder:
+
+```bash
 cd Heart_Disease_Project/UI
 streamlit run app.py
-Enter patient data in the web interface to get real-time heart disease predictions.
+```
 
-3️⃣ Ngrok Deployment [Bonus]
-Verify your Ngrok account and get authtoken:
+Then:
 
-bash
-Copy code
+* Open the URL shown in the terminal (usually `http://localhost:8501`)
+* Enter patient data in the web interface
+* Get **real-time heart disease predictions**
+
+---
+
+### 3️⃣ Ngrok Deployment [Bonus]
+
+1. Create and verify your **Ngrok** account and get your `AUTHTOKEN`.
+2. Authenticate Ngrok:
+
+```bash
 ngrok authtoken <YOUR_AUTHTOKEN>
-Open terminal in Deploy/ folder:
+```
 
-bash
-Copy code
+3. From the `Deploy/` folder, run:
+
+```bash
 cd Heart_Disease_Project/Deploy
 python ngrok_deploy.py
-Copy the Ngrok public URL printed in the console to access the Streamlit app online.
+```
 
-💾 Model Files
-Random_Forest_model.pkl – trained Random Forest classifier
+4. Copy the **public Ngrok URL** shown in the console and open it in your browser to access the Streamlit app online.
 
-Logistic_Regression_model.pkl – trained Logistic Regression
+---
 
-Decision_Tree_model.pkl – trained Decision Tree
+## 💾 Model Files
 
-SVM_model.pkl – trained SVM classifier
+The following trained models are stored in the `models/` folder:
 
-scaler.pkl – StandardScaler used for data preprocessing
+* `Random_Forest_model.pkl` – trained Random Forest classifier
+* `Logistic_Regression_model.pkl` – trained Logistic Regression model
+* `Decision_Tree_model.pkl` – trained Decision Tree classifier
+* `SVM_model.pkl` – trained Support Vector Machine classifier
+* `scaler.pkl` – `StandardScaler` used for data preprocessing
 
-Make sure these models are in the models/ folder.
+Make sure these files stay in the `models/` directory so the app can load them correctly.
 
-📊 Data Files
-heart_disease.csv – original dataset
+---
 
-heart_disease_selected_features.csv – dataset with selected key features
+## 📊 Data Files
 
-📈 Results
-Evaluation metrics for all models are stored in results/evaluation_metrics.txt
-Includes Accuracy, Precision, Recall, F1-score, ROC-AUC.
+Located in the `data/` folder:
 
-📝 Notes
-Use absolute paths in app.py for models and data to avoid FileNotFound errors.
+* `heart_disease.csv` – original UCI heart disease dataset
+* `heart_disease_selected_features.csv` – dataset with selected key features after preprocessing/feature selection
 
-Always run Streamlit apps with:
+---
 
-bash
-Copy code
-streamlit run app.py
+## 📈 Results
+
+Evaluation metrics for all models are stored in:
+
+```text
+results/evaluation_metrics.txt
+```
+
+This includes:
+
+* Accuracy
+* Precision
+* Recall
+* F1-score
+* ROC-AUC
+
+Use these metrics to compare model performance and select the best one for deployment.
+
+---
+
+## 📝 Notes & Tips
+
+* Use **absolute or project-relative paths** in `app.py` when loading models and data to avoid `FileNotFoundError`.
+
+* Always run Streamlit apps with:
+
+  ```bash
+  streamlit run app.py
+  ```
+
+* If you modify the models or retrain them, don’t forget to:
+
+  * Save them again to the `models/` folder
+  * Update any paths or preprocessing steps accordingly
+
+---
+
+## 🔮 Future Work
+
+* Add **Deep Learning models** such as ANN or CNN for improved performance.
+* Integrate **real hospital data** instead of only relying on the UCI dataset.
+* Add **model explainability** using SHAP or LIME.
+* Improve the **UI design** with better visualization and patient reports.
+* Deploy the system on a **cloud platform** (Heroku, Render, or AWS).
+
+---
+
+## ⚠️ Limitations
+
+* The dataset is relatively **small** and may not fully represent real-world cases.
+* Predictions depend heavily on the **quality of input features**.
+* The system should be used for **educational purposes only**, not as a medical diagnosis tool.
